@@ -1,7 +1,19 @@
 import React, { Component } from 'react';
-
+import dataGame from '../../components/data.json';
 class Single extends Component {
     render() {
+
+        console.log(this.props.match.params.id);
+        dataGame.map((x, y)=>{
+            if(x.id == this.props.match.params.id){
+                console.log("Trùng ID");
+            }
+            else
+            {
+                console.log(x.title);
+            }
+            return;
+        })
         return (
             <div>
                 {/* breadcrumbs */}

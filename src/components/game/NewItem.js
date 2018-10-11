@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link } from "react-router-dom";
 
 class NewItem extends Component {
     constructor(props){
@@ -34,18 +35,18 @@ class NewItem extends Component {
         return str;
     }
     render() {
-        const {title, gameId} = this.props;
+        const {title, gameId,photo} = this.props;
         // let x = "mystr" + title + gameId;
         // let x = `mystr${title}-${gameId}.html`;
         
         return (
             <div className="gallery-grid">
-                <a className="book popup-with-zoom-anim button-isi zoomIn animated" data-wow-delay=".5s" 
-                    href={`/game-detail/${title}-${gameId}.html`} >
-
-                    <img src={this.props.photo} alt=" " className="img-responsive zoom-img"/>
-                    <p>{this.props.title}</p>
-                </a>
+                <Link to={"/game-detail/"+this.to_slug(title)+"."+gameId+".html"}
+                    // href={`/game-detail/${title}-${gameId}.html`} >
+                    className="book popup-with-zoom-anim button-isi zoomIn animated" data-wow-delay=".5s">
+                    <img src={photo} alt="Game" className="img-responsive zoom-img"/>
+                    <p>{title}</p>
+                </Link>
             </div>
         );
     }

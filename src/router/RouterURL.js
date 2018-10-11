@@ -12,12 +12,12 @@ class RouterURL extends Component {
         return (
                 <div>
                     <Route exact path="/" component={Home} />
-                    <Route path="/home" component={Home} />
-                    <Route path="/about" component={About} />
-                    <Route path="/game" component={Game}/>
-                    <Route path="/news" component={News}/>
-                    <Route path="/contact" component={Contact} />        
-                    <Route path="/game-detail/" component={Single}/>
+                    <Route exact path="/home" component={Home} />
+                    <Route exact path="/about" component={About} />
+                    <Route exact path="/game" component={Game}/>
+                    <Route exact path="/news" component={News}/>
+                    <Route exact path="/contact" component={Contact} />        
+                    <Route exact path="/game-detail/:slug.:id.html" component={Single}/>
                 </div>
         );
     }
